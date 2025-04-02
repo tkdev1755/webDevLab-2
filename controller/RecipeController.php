@@ -30,7 +30,7 @@ class RecipeController
             $this->model->addRecipe($data);
             header('Location: index.php?action=list');
         } else {
-            include __DIR__ . '/../view/add_recipe.php'; // Inclusion du modèle User
+            require_once __DIR__ . '/../view/add_recipe.php'; // Inclusion du modèle User
         }
     }
 
@@ -57,5 +57,11 @@ class RecipeController
     {
         $this->model->deleteRecipe($id);
         header('Location: index.php?action=list');
+    }
+
+    public function followRecipe($id)
+    {
+        $recipe = $this->model->getRecipeById($id);
+        include  __DIR__ . '/../view/followRecipe.php'; // Inclusion du modèle User
     }
 }

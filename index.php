@@ -25,6 +25,10 @@ switch ($action) {
         $id = $_GET['id'] ?? null;
         $controller->deleteRecipe($id);
         break;
+    case 'follow':
+        $id = $_GET['id'] ?? null;
+        $controller->followRecipe($id);
+        break;
     default:
         echo json_encode(['status' => 'error', 'message' => 'Action inconnue']);
         break;
