@@ -15,7 +15,7 @@ if (!isset($_SESSION['connected']) || !$_SESSION['connected']) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil de <?php echo htmlspecialchars($_SESSION['name']); ?></title>
     <!-- Inclusion de Bootstrap -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
 </head>
 <body>
 <div class="container mt-5">

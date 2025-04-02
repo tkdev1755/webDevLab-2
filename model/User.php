@@ -33,7 +33,7 @@ class User
 
     public static function login($email, $password){
         $db = Database::getConnection();
-        $stmt = $db->prepare("SELECT * FROM users WHERE email = :email AND password = :password");
+        $stmt = $db->prepare("SELECT * FROM users WHERE email = :email");
         $stmt->bindParam(":email", $email);
         $stmt->execute();
         $user = $stmt->fetch(PDO::FETCH_ASSOC);

@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($user) {
         error_log("User found, and connected successfully");
         // Rediriger vers la page d'accueil après une connexion réussie
-        header('Location: index.php');
+        header('Location: ../index.php');
         exit();
     } else {
         error_log("User not found");
