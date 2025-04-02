@@ -1,35 +1,42 @@
-<?php
-require_once('controller/RecipeController.php');
-require_once  'config/db.php';
+<?php include('config.php'); ?>
+<?php include('includes/public/head_section.php'); ?>
+<title>MyWebSite | Home </title>
 
-$db = Database::getConnection();
-$pdo = $db; // Connexion DB
+</head>
+
+<body>
+
+	<div class="container">
+
+		<!-- Navbar -->
+		<?php include(ROOT_PATH . '/includes/public/navbar.php'); ?>
+		<!-- // Navbar -->
+
+		<!-- Banner -->
+		<?php include(ROOT_PATH . '/includes/public/banner.php'); ?>
+		<!-- // Banner -->
+
+		<!-- Messages -->
+		
+		<!-- // Messages -->
+
+		<!-- content -->
+		<div class="content">
+			<h2 class="content-title">Recent Articles</h2>
+			<hr>
+
+			
 
 
-$controller = new RecipeController($pdo);
 
-$action = isset($_GET['action']) ? $_GET['action'] : 'list';
+		</div>
+		<!-- // content -->
 
-switch ($action) {
-    case 'list':
-        $controller->listRecipes();
-        break;
-    case 'add':
-        $controller->addRecipe();
-        break;
-    case 'update':
-        $id = $_GET['id'] ?? null;
-        $controller->updateRecipe($id);
-        break;
-    case 'delete':
-        $id = $_GET['id'] ?? null;
-        $controller->deleteRecipe($id);
-        break;
-    case 'follow':
-        $id = $_GET['id'] ?? null;
-        $controller->followRecipe($id);
-        break;
-    default:
-        echo json_encode(['status' => 'error', 'message' => 'Action inconnue']);
-        break;
-}
+
+	</div>
+	<!-- // container -->
+
+
+	<!-- Footer -->
+	<?php include(ROOT_PATH . '/includes/public/footer.php'); ?>
+	<!-- // Footer -->
